@@ -61,7 +61,9 @@ jobs:
       run: |
         cd lede
         curl -fsSL $CONFIG_URL/$CONFIG_FILE > $CONFIG_FILE
-        bash < (curl -fsSL $CONFIG_URL/$DIY_SH)
+        curl -fsSL $CONFIG_URL/$DIY_SH > $DIY_SH
+        chmod +x $DIY_SH
+        ./$DIY_SH
         ./scripts/feeds install -a
         make defconfig
 
