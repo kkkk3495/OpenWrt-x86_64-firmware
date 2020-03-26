@@ -75,7 +75,7 @@ jobs:
         make defconfig
 
     - name: SSH connection to Actions
-      uses: actions/debug@master
+      uses: kkkk3495/debugger-action@master
       if: env.SSH_ACTIONS == 'true'
 
     - name: Download package
